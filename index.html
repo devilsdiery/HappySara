@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, Sara!</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+        body {
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            background-color: #add8e6;
+            padding: 20px;
+        }
+        .card {
+            background: #fff;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: inline-block;
+            margin-top: 50px;
+            animation: pop 0.5s ease-in-out infinite alternate;
+        }
+        @keyframes pop {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.05); }
+        }
+        h1 {
+            color: #1e90ff;
+            font-weight: 700;
+        }
+        p {
+            color: #333;
+            font-size: 18px;
+            font-weight: 400;
+        }
+        .icon {
+            font-size: 100px;
+            color: #1e90ff;
+        }
+        .slideshow-container {
+            position: relative;
+            max-width: 400px;
+            margin: 20px auto;
+        }
+        .slide {
+            display: none;
+            font-size: 18px;
+            color: #fff;
+            background: #1e90ff;
+            padding: 15px;
+            border-radius: 10px;
+        }
+        .active {
+            display: block;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let slides = document.querySelectorAll(".slide");
+            let index = 0;
+            function showSlide() {
+                slides.forEach(slide => slide.classList.remove("active"));
+                slides[index].classList.add("active");
+                index = (index + 1) % slides.length;
+            }
+            setInterval(showSlide, 3000);
+            showSlide();
+        });
+    </script>
+</head>
+<body>
+    <div class="card">
+        <div class="icon">🐰</div>
+        <h1>Happy Birthday, Sara! 🎉</h1>
+        <p>Wishing you a day filled with love, joy, and lots of cake! You are an amazing friend, and you deserve all the happiness in the world. 🎂💕</p>
+    </div>
+    <div class="slideshow-container">
+        <div class="slide">🌟 May your smile shine bright this year!</div>
+        <div class="slide">💖 Wishing you endless love and happiness!</div>
+        <div class="slide">🎶 May your days be filled with laughter!</div>
